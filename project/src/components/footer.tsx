@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 function Footer():JSX.Element{
   return(
     <footer className="footer">
-    <h2 className="logo">Qpick</h2>
+    <Link to="/"><h2 className="logo">Qpick</h2></Link>
     <ul className="links">
       <li><a href="/" className="footer-link">Контакты</a></li>
       <li><a href="/" className="footer-link">Избранное</a></li>

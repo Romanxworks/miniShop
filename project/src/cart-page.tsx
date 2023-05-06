@@ -4,7 +4,7 @@ import Header from "./components/header";
 function CartPage(): JSX.Element{
   return(
     <>
-    <Header />
+    <Header count={0}/>
     <main>
     <h3 className="title">Корзина</h3>
     <section className="cart">

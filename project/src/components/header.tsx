@@ -1,15 +1,23 @@
-function Header(): JSX.Element{
+import { Link } from "react-router-dom";
+
+type HeaderProps = {
+  count: number;
+}
+
+function Header({count = 0}: HeaderProps): JSX.Element{
   return (
     <header className="header">
-    <h2 className="logo">Qpick</h2>
+    <Link to="/"><h2 className="logo">Qpick</h2></Link>
     <div className="icons-group">
       <div className="icons">
-        <span className="likes-count count">1</span>
+        <span className="likes-count count">0</span>
         <img className="icon" src="img/likes.svg" alt="likes-icon"/>
       </div>
       <div className="icons">
-        <span className="cart-count count">2</span>
-        <img className="icon" src="img/cart.svg" alt="cart-icon"/>
+        <Link to='/cart'>
+          <span className="cart-count count">{count}</span>
+          <img className="icon" src="img/cart.svg" alt="cart-icon"/>
+        </Link>
       </div>
     </div>
   </header>
