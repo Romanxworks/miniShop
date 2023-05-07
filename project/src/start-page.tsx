@@ -1,25 +1,20 @@
-import Footer from "./components/footer";
-import Header from "./components/header";
+
 import { products } from "./store/products";
 import ProductItem from "./components/product-item";
-import { useState } from "react";
 import { Product } from "./types/product";
 
-function StartPage (): JSX.Element{
-  const [cart, setCart] = useState<Product[]>([]);
-  const countCartChange = (product: Product) => {
-    setCart([...cart, product]);
-  }
+type StartPageProps = {
+  addToCard: (prod: Product, count: number)=> void;
+}
+function StartPage ({addToCard}:StartPageProps): JSX.Element{
   return(
-  <>
-    <Header count={cart?.length} />
     <main>
       <section className="products">
         <h3 className="title">Наушники</h3>
         <div className="products-list">
             {
                 products.slice(0,6).map((product)=>(
-                  <ProductItem product={product} countCartChange={countCartChange}
+                  <ProductItem product={product} addToCard={addToCard}
                     key={`${product.id}-${product.title}`}
                   />
                 ))
@@ -32,7 +27,7 @@ function StartPage (): JSX.Element{
         <div className="products-list">
             {
                 products.slice(6,products.length).map((product)=>(
-                  <ProductItem product={product} countCartChange={countCartChange}
+                  <ProductItem product={product} addToCard={addToCard}
                     key={`${product.id}-${product.title}`}
                   />
                 ))
@@ -40,8 +35,6 @@ function StartPage (): JSX.Element{
         </div>
       </section>
     </main>
-    <Footer />
-  </>
   );
 }
 export default StartPage;

@@ -49,6 +49,7 @@ a:hover{
 }
 section{
   margin: 0;
+  margin-bottom: 20px;
 }
 
 .header {
@@ -225,6 +226,7 @@ section{
   width: 150px;
   max-height: 135px;
   overflow: hidden;
+  max-width: 70%;
 }
 .product-cart-count {
   grid-area: count;
@@ -281,4 +283,7 @@ button[class*=btn] {
   border-radius: 20px;
   color: var(--white-color);
   background-color: #000000;
+}
+.notice{
+  color:red
 }

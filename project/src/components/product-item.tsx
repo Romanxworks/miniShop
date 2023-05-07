@@ -4,10 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 
 type ProductItemProps = {
   product: Product;
-  countCartChange:(prod:Product)=> void;
+  addToCard: (prod: Product, count: number)=> void;
 }
 
-function ProductItem ({product, countCartChange}: ProductItemProps):JSX.Element{
+function ProductItem ({product, addToCard}: ProductItemProps):JSX.Element{
   const {title, image, price, oldPrice, ratig} = product;
   const isSale = price <= oldPrice;
   const [inCart, setInCart] = useState(false);
@@ -15,7 +15,7 @@ function ProductItem ({product, countCartChange}: ProductItemProps):JSX.Element{
   const clickHandler = (evt:SyntheticEvent<HTMLElement>) => {
     evt.preventDefault();
     if(!inCart){
-      countCartChange(product);
+      addToCard(product, 1);
     }
     setInCart(!inCart);
   }

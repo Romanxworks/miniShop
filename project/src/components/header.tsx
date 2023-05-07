@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 type HeaderProps = {
-  count: number;
+  count: number|null;
 }
 
 function Header({count = 0}: HeaderProps): JSX.Element{
