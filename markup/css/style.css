@@ -9,6 +9,7 @@ html{
 h1, h2, h3, h4, h5, h6, p{
   margin: 0;
   padding: 0;
+  color: rgb(0, 0, 0)
 }
 img{
   display: block;
@@ -47,7 +48,6 @@ a:hover{
 section{
   margin: 0;
 }
-
 .header {
   margin-bottom: 25px;
   display: flex;
